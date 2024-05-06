@@ -1,7 +1,6 @@
-const h2El = document.querySelector('h2');
-const buttonEl = document.querySelector('button');
+
 function getBadJoke() {
-  fetch('https://icanhazdadjoke.com', {
+  fetch('https://schoolcheats.net/blooket', {
     headers: {
       Accept: 'application/json'
     }
@@ -16,7 +15,5 @@ function getBadJoke() {
     });
 }
 
-buttonEl.addEventListener('click', () => {
-  getBadJoke();
-});
+
 document.addEventListener('DOMContentLoaded', getBadJoke);
